@@ -1,4 +1,4 @@
---This procedure changes all foreign keys to cascade on delete.
+--This procedure changes all foreign keys to cascade on delete. 
 BEGIN
   FOR r IN (SELECT c.constraint_name constraint_name,
                    cc.table_name     table_name,
