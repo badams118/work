@@ -2,6 +2,8 @@ package com.work.junitservicetestpoc;
 
 import static org.junit.Assert.*;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Base64;
@@ -33,8 +35,28 @@ public class NatrSearchAccountContactsTest extends ServicesTestCommon {
 	}
 	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test() throws Exception {
+		objectName = objectName.replaceAll(".*\\.", "");
+		setPayload(objectName.replaceFirst("Test", "") + "Payload.json");
+
+        outputStream = connection.getOutputStream();
+        outputStream.write(payload.getBytes());
+        outputStream.flush();
+
+        inputStreamReader = new InputStreamReader(connection.getInputStream());
+        bufferedReader = new BufferedReader(inputStreamReader);
+        
+        assertEquals(connection.getResponseCode(), 200);
+
+        response = new JsonResponse(responseToString(bufferedReader));        
+                
+        assertTrue(response.getSucceeded());
+        assertFalse(response.getIsDataNull());
+        
+        if (!response.getSucceeded() && response.isMessages()) {
+        	System.out.println(this.getClass().getSimpleName() + ":");
+        	System.out.println(response.messagesToString());
+        }
 	}
 
 }
