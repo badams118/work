@@ -10,7 +10,7 @@ public class JsonResponse {
 	private JsonNode root, outputNode, responseNode, messagesNode;
 	
 	public JsonResponse(String jsonString) {
-        objectMapper = new ObjectMapper();   
+		objectMapper = new ObjectMapper();   
         
 		try {
 			root = objectMapper.readTree(jsonString);
@@ -20,9 +20,9 @@ public class JsonResponse {
 			e.printStackTrace();
 		}
 		
-        outputNode = root.path("OutputParameters");
-        responseNode = outputNode.path("RESPONSE");
-        messagesNode = responseNode.path("MESSAGES");
+		outputNode = root.path("OutputParameters");
+		responseNode = outputNode.path("RESPONSE");
+		messagesNode = responseNode.path("MESSAGES");
 	}
 	
 	public boolean getSucceeded() {
@@ -70,4 +70,5 @@ public class JsonResponse {
 		
 		return messages;
 	}
+	
 }
