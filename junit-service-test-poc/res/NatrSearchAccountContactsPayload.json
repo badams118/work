@@ -1,0 +1,26 @@
+{
+	"RESTHeader": {
+		"Responsibility": "XX_RESPONSIBILITY"
+	},
+	"InputParameters": {
+		"BASEPARAMETERS": {
+			"BRAND": "NSP",
+			"COUNTRY": "US",
+			"LANGUAGE": "en",
+			"AGENT": "eviramonte",
+			"CLIENTSYSTEM": "C3"
+		},
+		"SEARCHGLOBALLY": "0",
+		"ACCOUNTNUMBER": "",
+		"LEGACYACCOUNTNUMBER": "",
+		"PHONENUMBER": "",
+		"EMAILADDRESS": "",
+		"ACCOUNTNAME": "",
+		"CONTACTFIRSTNAME": "",
+		"CONTACTLASTNAME": "Ivy",
+		"CONTACTFULLNAMEENGLISH": "",
+		"CITY": "",
+		"STATE": "",
+		"POSTALCODE": ""
+	}
+}
