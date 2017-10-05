@@ -36,8 +36,7 @@ public abstract class ServicesTestCommon {
 	    	authUser = sub.getString("auth-user");
 	    	authPassword = sub.getString("auth-password");
 	    	responsibility = sub.getString("responsibility");
-		}
-		catch (ConfigurationException ce) {
+		} catch (ConfigurationException ce) {
 			urlBase = "";
 			authUser = "";
 			authPassword = "";
