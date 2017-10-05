@@ -28,14 +28,14 @@ public abstract class ServicesTestCommon {
 		String responsibility;
 
 		try {
-	    	XMLConfiguration config = new XMLConfiguration("config.xml");
+			XMLConfiguration config = new XMLConfiguration("config.xml");
 
-	    	HierarchicalConfiguration sub = config.configurationAt("environment(0)");
+			HierarchicalConfiguration sub = config.configurationAt("environment(0)");
 	    	
-	    	urlBase = sub.getString("url-base");
-	    	authUser = sub.getString("auth-user");
-	    	authPassword = sub.getString("auth-password");
-	    	responsibility = sub.getString("responsibility");
+			urlBase = sub.getString("url-base");
+			authUser = sub.getString("auth-user");
+			authPassword = sub.getString("auth-password");
+			responsibility = sub.getString("responsibility");
 		} catch (ConfigurationException ce) {
 			urlBase = "";
 			authUser = "";
