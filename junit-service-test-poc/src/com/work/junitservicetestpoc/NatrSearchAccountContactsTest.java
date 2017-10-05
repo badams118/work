@@ -23,15 +23,15 @@ public class NatrSearchAccountContactsTest extends ServicesTestCommon {
 		encoding = Base64.getEncoder().encodeToString(userPass.getBytes());
 		connection = (HttpURLConnection) url.openConnection();
 		connection.setDoOutput(true);
-	    connection.setRequestMethod("POST");
-	    connection.setRequestProperty("Authorization", "Basic " + encoding);
-	    connection.setRequestProperty("Content-Type", "application/json");
-        objectMapper = new ObjectMapper();
+		connection.setRequestMethod("POST");
+		connection.setRequestProperty("Authorization", "Basic " + encoding);
+		connection.setRequestProperty("Content-Type", "application/json");
+		objectMapper = new ObjectMapper();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-        connection.disconnect();
+		connection.disconnect();
 	}
 	
 	@Test
@@ -39,24 +39,24 @@ public class NatrSearchAccountContactsTest extends ServicesTestCommon {
 		objectName = objectName.replaceAll(".*\\.", "");
 		setPayload(objectName.replaceFirst("Test", "") + "Payload.json");
 
-        outputStream = connection.getOutputStream();
-        outputStream.write(payload.getBytes());
-        outputStream.flush();
+		outputStream = connection.getOutputStream();
+		outputStream.write(payload.getBytes());
+		outputStream.flush();
 
-        inputStreamReader = new InputStreamReader(connection.getInputStream());
-        bufferedReader = new BufferedReader(inputStreamReader);
+		inputStreamReader = new InputStreamReader(connection.getInputStream());
+		bufferedReader = new BufferedReader(inputStreamReader);
         
-        assertEquals(connection.getResponseCode(), 200);
+		assertEquals(connection.getResponseCode(), 200);
 
-        response = new JsonResponse(responseToString(bufferedReader));        
+		response = new JsonResponse(responseToString(bufferedReader));        
                 
-        assertTrue(response.getSucceeded());
-        assertFalse(response.getIsDataNull());
+		assertTrue(response.getSucceeded());
+		assertFalse(response.getIsDataNull());
         
-        if (!response.getSucceeded() && response.isMessages()) {
-        	System.out.println(this.getClass().getSimpleName() + ":");
-        	System.out.println(response.messagesToString());
-        }
+		if (!response.getSucceeded() && response.isMessages()) {
+			System.out.println(this.getClass().getSimpleName() + ":");
+			System.out.println(response.messagesToString());
+		}
 	}
-
+	
 }
