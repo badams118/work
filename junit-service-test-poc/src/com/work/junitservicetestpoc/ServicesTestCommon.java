@@ -22,10 +22,10 @@ public abstract class ServicesTestCommon {
 	public static final String RESPONSIBILITY;
     	
 	static {
-	    String urlBase;
-	    String authUser;
-	    String authPassword;
-	    String responsibility;
+		String urlBase;
+		String authUser;
+		String authPassword;
+		String responsibility;
 
 		try {
 	    	XMLConfiguration config = new XMLConfiguration("config.xml");
@@ -36,8 +36,8 @@ public abstract class ServicesTestCommon {
 	    	authUser = sub.getString("auth-user");
 	    	authPassword = sub.getString("auth-password");
 	    	responsibility = sub.getString("responsibility");
-	    }
-	    catch (ConfigurationException ce) {
+		}
+		catch (ConfigurationException ce) {
 			urlBase = "";
 			authUser = "";
 			authPassword = "";
@@ -79,4 +79,5 @@ public abstract class ServicesTestCommon {
 				
 		payload = payload.replaceAll("XX_RESPONSIBILITY", RESPONSIBILITY);		
 	}
+	
 }
