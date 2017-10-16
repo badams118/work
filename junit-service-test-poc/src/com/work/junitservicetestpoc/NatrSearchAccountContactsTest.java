@@ -49,7 +49,7 @@ public class NatrSearchAccountContactsTest extends ServicesTestCommon {
 		assertEquals(connection.getResponseCode(), 200);
 
 		response = new JsonResponse(responseToString(bufferedReader));        
-                
+        
 		assertTrue(response.getSucceeded());
 		assertFalse(response.getIsDataNull());
         
@@ -58,5 +58,5 @@ public class NatrSearchAccountContactsTest extends ServicesTestCommon {
 			System.out.println(response.messagesToString());
 		}
 	}
-	
+
 }
