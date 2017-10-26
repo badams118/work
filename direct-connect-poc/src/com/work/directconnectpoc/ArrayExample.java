@@ -14,7 +14,7 @@ import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.OracleConnection;
 import oracle.jdbc.OracleTypes;
 
-public class ArrayExampleMain {
+public class ArrayExample {
 
 	public static void main(String[] args) {	
 		try {

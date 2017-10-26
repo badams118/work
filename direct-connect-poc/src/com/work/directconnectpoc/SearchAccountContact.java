@@ -15,7 +15,7 @@ import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.OracleConnection;
 import oracle.jdbc.OracleTypes;
 
-public class SearchAccountContactPoc {
+public class SearchAccountContact {
 
 	public static void main(String[] args) {	
 		try {
