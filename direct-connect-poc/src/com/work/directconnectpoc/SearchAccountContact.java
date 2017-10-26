@@ -30,7 +30,7 @@ public class SearchAccountContact {
 			OracleCallableStatement statement = (OracleCallableStatement)connection.prepareCall(
 					"declare x boolean; " +
 					"begin " +
-					"  Search_Account_Contact(?, x, ?, ?, ?, ?, ?, ?, ?); " +
+					"  XBOL_Search_Account_Contact(?, x, ?, ?, ?, ?, ?, ?, ?); " +
 					"end;");
 
 	    	statement.registerOutParameter(1, Types.VARCHAR);
